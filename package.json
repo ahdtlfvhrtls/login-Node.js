@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node 7_ejs.js",
+    "start": "node get.js",
     "dev": "nodemon get.mjs"
   },
   "keywords": [],
