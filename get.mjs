@@ -3,9 +3,11 @@ import fs from "fs";
 import cors from "cors";
 
 const app = express();
+app.use(express.static(path.join(__dirname, "login")));
 
 app.use(cors());
 app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "login", "login.html"));
   fs.readFile("login.html", (err, data) => {
     if (err) {
       res.status(500);
