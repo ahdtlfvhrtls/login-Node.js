@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인 결과</title>
+  </head>
+  <body>
+    <h2>로그인 결과</h2>
+    <pre id="loginResult"></pre>
+    <p>아이디: <span id="id"></span></p>
+    <p>비밀번호: <span id="pw"></span></p>
+  </body>
+
+  <script>
+    const query = window.location.search.substring(1);
+    const splits = query.split("&");
+
+    const result = {};
+
+    splits.forEach((split) => {
+      const [key, value] = split.split("=");
+      result[key] = decodeURIComponent(value);
+    });
+
+    document.getElementById("loginResult").textContent = JSON.stringify(
+      result,
+      null,
+      2
+    );
+    document.getElementById("id").textContent = result.userid;
+    document.getElementById("pw").textContent = result.userpw;
+  </script>
+</html>
