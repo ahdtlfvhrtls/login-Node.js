@@ -3,16 +3,16 @@ import fs from "fs";
 import cors from "cors";
 
 const app = express();
-app.use(express.static("."));
 app.use(cors());
+app.use(express.static("."));
 app.get("/login", (req, res) => {
   fs.readFile("login.html", (err, data) => {
     if (err) {
       res.status(500);
       return res.send("읽기 오류");
     }
-    res.status(200, { "Content-Type": "text/html" });
-    res.send(data);
+    res.setHeader("Content-Type", "text/html");
+    res.status(200).send(data);
   });
 });
 

@@ -15,7 +15,7 @@
       document.getElementById("loginBtn").addEventListener("click", () => {
         const userid = document.getElementById("userid").value;
         const userpw = document.getElementById("userpw").value;
-        fetch(`http://127.0.0.1:3000/login?userid=${userid}&userpw=${userpw}`)
+        fetch(`/login?userid=${userid}&userpw=${userpw}`)
           .then((res) => {
             if (!res.ok) {
               throw new Error(`서버 응답 오류: ${res.status}`);
