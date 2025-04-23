@@ -3,7 +3,7 @@ import fs from "fs";
 import cors from "cors";
 
 const app = express();
-
+app.use(express.static("."));
 app.use(cors());
 app.get("/login", (req, res) => {
   fs.readFile("login.html", (err, data) => {
