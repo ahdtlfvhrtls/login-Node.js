@@ -15,7 +15,9 @@
       document.getElementById("loginBtn").addEventListener("click", () => {
         const userid = document.getElementById("userid").value;
         const userpw = document.getElementById("userpw").value;
-        fetch(`/login?userid=${userid}&userpw=${userpw}`)
+        fetch(
+          `https://port-0-login-node-js-m9sa9ke9469370bb.sel4.cloudtype.app/login?userid=${userid}&userpw=${userpw}`
+        )
           .then((res) => {
             if (!res.ok) {
               throw new Error(`서버 응답 오류: ${res.status}`);
